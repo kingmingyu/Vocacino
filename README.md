@@ -4,7 +4,7 @@
 ##### Back-End  
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat&logo=springboot&logoColor=white) ![Java](https://img.shields.io/badge/Java-007396?style=flat&logo=openjdk&logoColor=white)  ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=flat&logo=intellijidea&logoColor=white)  
 
-## 커밋 메시지 컨벤션
+## 커밋 메시지
 
 | 유형 (Type) | 설명 |
 |-------------|------|
