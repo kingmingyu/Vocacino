@@ -31,12 +31,15 @@ public class SecurityConfig {
 
         http
                 .oauth2Login((oauth2) -> oauth2
+                        .loginPage("/login") // <--- 이 부분이 중요! 당신의 커스텀 로그인 페이지 경로를 지정합니다.
+                        .defaultSuccessUrl("/", true) // 로그인 성공 시 리디렉션될 경로
                         .userInfoEndpoint((userInfoEndpointConfig) -> userInfoEndpointConfig
                                 .userService(customOAuth2UserService)));
 
         http
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/", "oauth2/**", "/login/**").permitAll()
+                        .requestMatchers("/images/**", "/css/**").permitAll()
+                        .requestMatchers("/", "/oauth2/**", "/login/**").permitAll()
                         .anyRequest().authenticated());
 
         return http.build();
