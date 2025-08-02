@@ -20,6 +20,14 @@ public class JoinService {
 
     public void joinProcess(JoinDTO joinDTO){
 
+        String email = joinDTO.getEmail();
+
+        if(userRepository.findByEmail(email) != null){
+
+            System.out.println("이미 존재하는 이메일입니다.");
+            return;
+        }
+
         UserEntity data = new UserEntity();
 
         data.setUsername(joinDTO.getUsername());
