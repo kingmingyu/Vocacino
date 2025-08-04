@@ -15,8 +15,8 @@
 | Style       | 스타일 변경 (코드 포맷팅, 세미콜론 추가 등. 비즈니스 로직에 영향 없음) |
 | Refactor    | 코드 리팩토링 (기능 변화 없이 구조 개선) |
 
-##WBS
-https://github.com/user-attachments/assets/c81b6826-e97d-42aa-bc02-748904a140b8
+## WBS
+![Image](https://github.com/user-attachments/assets/c81b6826-e97d-42aa-bc02-748904a140b8)
 
-##Gantt 차트
-https://github.com/user-attachments/assets/c1a1e8bd-2a9c-4fd4-b096-16bb99977c3e
+## Gantt 차트
+![Image](https://github.com/user-attachments/assets/c1a1e8bd-2a9c-4fd4-b096-16bb99977c3e)
