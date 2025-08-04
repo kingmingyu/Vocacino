@@ -37,7 +37,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return userEntity.getUsername();
+        return userEntity.getEmail(); //고유 식별자가 email이기 때문에 getUsername을 email을 반환하게 변경
     }
 
     @Override
