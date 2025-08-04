@@ -51,6 +51,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/images/**", "/css/**").permitAll()
                         .requestMatchers("/oauth2/**", "/login/**").permitAll()
+                        .requestMatchers("/join", "/joinProc").permitAll()
                         .anyRequest().authenticated());
 
         return http.build();
