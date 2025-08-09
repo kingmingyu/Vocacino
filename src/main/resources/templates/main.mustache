@@ -1,5 +1,57 @@
 {{>layouts/header}}
 
+<!-- 메인 컨테이너 -->
+<div class="container my-5">
 
+    <!-- 검색창 -->
+    <div class="d-flex justify-content-center mb-4">
+        <div class="d-flex align-items-center border border-secondary rounded-pill shadow px-3 py-2 bg-white" style="max-width: 500px; width: 100%;">
+            <input
+                    type="text"
+                    placeholder="단어 검색"
+                    class="form-control border-0 me-2"
+                    style="border-radius: 4000px; box-shadow: none;">
+            <button
+                    type="submit"
+                    class="btn btn-primary rounded-pill px-4 d-flex align-items-center justify-content-center"
+                    style="white-space: nowrap;">
+                검색
+            </button>
+        </div>
+    </div>
+
+    <!-- 📅 캘린더 영역 -->
+    <div class="bg-white p-4 rounded shadow mb-4" style="max-width: 1000px; margin: 0 auto;">
+        <div id="calendar" style="height: 650px;"></div>
+    </div>
+
+    <!-- 단어 학습 버튼 -->
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary px-5 py-2">단어 학습하기</button>
+    </div>
+
+</div>
+
+<!-- FullCalendar 의존성 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calendarEl = document.getElementById('calendar');
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            height: 650,
+            locale: 'ko',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                //right: 'dayGridMonth,timeGridWeek,listWeek'
+            }
+        });
+        calendar.render();
+    });
+</script>
 
 {{>layouts/footer}}

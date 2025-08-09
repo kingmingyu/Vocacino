@@ -25,4 +25,14 @@ public class GlobalControllerAdvice {
         }
         return "손님";
     }
+
+    @ModelAttribute("email")
+    public String getEmail(){
+        UserEntity currentUser = userContextService.getCurrentUser();
+
+        if(currentUser != null){
+            return currentUser.getEmail();
+        }
+        return "손님";
+    }
 }
