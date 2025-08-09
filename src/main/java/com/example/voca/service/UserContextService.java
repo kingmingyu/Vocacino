@@ -19,7 +19,6 @@ public class UserContextService {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
-        System.out.println(email);
 
         if(authentication == null || authentication instanceof AnonymousAuthenticationToken){
             return null;

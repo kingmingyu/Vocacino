@@ -1,16 +1,16 @@
 {{>layouts/header}}
 
-<form>
+<form class="container" action="/profile/update" method="post">
     <div class="mb-3">
         <label for="emailInput" class="form-label">이메일</label>
-        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder={{email}} disabled>
+        <input type="email" class="form-control" id="emailInput" name="email" value="{{email}}" readonly>
     </div>
     <div class="mb-3">
         <label for="nicknameInput" class="form-label">닉네임</label>
-        <input type="text" class="form-control" id="nicknameInput" value={{username}}>
+        <input type="text" class="form-control" id="nicknameInput" name="username" value={{username}}>
     </div>
     <button type="submit" class="btn btn-primary">수정하기</button>
-    <button type="button" class="btn btn-danger">회원탈퇴</button>
+    <button type="submit" formaction="/profile/delete" class="btn btn-danger">회원탈퇴</button>
 </form>
 
 
