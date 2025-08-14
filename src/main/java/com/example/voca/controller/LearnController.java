@@ -69,7 +69,19 @@ public class LearnController {
     }
 
     @GetMapping("/voca/list")
-    public String showVocaList(){
+    public String showVocaList(Model model){
+
+        List<VocaEntity> allVoca = vocaRepository.findAll();
+        UserEntity user = userContextService.getCurrentUser();
+
+        int learningDate = user.getLearningData();
+        int startIndex = learningDate * 40;
+        int endIndex = Math.min(startIndex + 40, allVoca.size());
+
+        List<VocaEntity> todayVoca = allVoca.subList(startIndex, endIndex);
+
+        model.addAttribute("voca", todayVoca);
+
         return "vocaList";
     }
 

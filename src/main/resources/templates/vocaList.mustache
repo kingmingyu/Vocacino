@@ -1,0 +1,26 @@
+{{>layouts/header}}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">단어 목록</h1>
+    <table class="table table-striped table-hover" style="width: 70%; margin: 0 auto;">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col" style="width: 50%; font-size: 1.1rem;">단어 (Spelling)</th>
+            <th scope="col" style="width: 50%; font-size: 1.1rem;">뜻 (Meaning)</th>
+        </tr>
+        </thead>
+        <tbody style="font-size: 1.1rem;">
+        {{#voca}}
+            <tr>
+                <td>{{spelling}}</td>
+                <td>{{meaning}}</td>
+            </tr>
+        {{/voca}}
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center mt-5">
+        <a href="/select" class="btn btn-primary px-5 py-2">학습 완료</a>
+    </div>
+</div>
+
+{{>layouts/footer}}
