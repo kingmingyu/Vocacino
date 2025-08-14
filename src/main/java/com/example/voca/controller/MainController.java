@@ -9,11 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-    private final UserContextService userContextService;
-    public MainController(UserContextService userContextService){
-        this.userContextService = userContextService;
-    }
-
     @GetMapping("/")
     public String mainP(){
 

@@ -1,0 +1,20 @@
+{{>layouts/header}}
+
+{{#voca}}
+    <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+        <div>
+            {{spelling}}
+        </div>
+        <div>
+            {{meaning}}
+        </div>
+        <div>
+            <a href="/voca/{{prev}}" class="btn btn-primary px-5 py-2 mb-2 {{#isFirstWord}}disabled{{/isFirstWord}}"><</a>
+            <a href="/voca/list" class="btn btn-primary px-5 py-2 mb-2">〓</a>
+            <a href="/voca/{{next}}" class="btn btn-primary px-5 py-2 mb-2 {{#isLastWord}}disabled{{/isLastWord}}">></a>
+        </div>
+    </div>
+{{/voca}}
+
+
+{{>layouts/footer}}

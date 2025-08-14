@@ -24,4 +24,6 @@ public class UserEntity {
 
     @Column(nullable = true)
     private String providerId; //일반 로그인 시 null
+
+    private int learningData = 0; //유저 학습 날짜 (기본 0일차)
 }
