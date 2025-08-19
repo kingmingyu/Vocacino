@@ -9,9 +9,26 @@
             </div>
         </div>
         <div class="d-flex justify-content-center mt-4">
-            <a href="/voca/{{prev}}" class="btn btn-primary px-4 py-2 me-3 {{#isFirstWord}}disabled{{/isFirstWord}}"><</a>
-            <a href="/voca/list" class="btn btn-primary px-4 py-2 me-3">〓</a>
-            <a href="/voca/{{next}}" class="btn btn-primary px-4 py-2 {{#isLastWord}}disabled{{/isLastWord}}">></a>
+            {{#isFirst}}
+                <button class="btn btn-secondary px-4 py-2" disabled><</button>
+            {{/isFirst}}
+            {{^isFirst}}
+                <a href="/voca/{{prev}}" class="btn btn-primary px-4 py-2"><</a>
+            {{/isFirst}}
+
+            <a href="/voca/list" class="btn btn-primary px-4 py-2 mx-3">〓</a>
+
+            {{#isLast}}
+                <button class="btn btn-secondary px-4 py-2" disabled>></button>
+            {{/isLast}}
+            {{^isLast}}
+                <a href="/voca/{{next}}" class="btn btn-primary px-4 py-2">></a>
+            {{/isLast}}
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            {{#isLast}}
+                <a href="/select" class="btn btn-primary px-5 py-2">학습 완료</a>
+            {{/isLast}}
         </div>
     {{/voca}}
 </div>
