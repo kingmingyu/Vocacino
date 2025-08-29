@@ -84,6 +84,7 @@ public class LearnController {
         model.addAttribute("next", nextId);
         model.addAttribute("isFirst", isFirstInBatch);
         model.addAttribute("isLast", isLastInBatch);
+        model.addAttribute("currentIndex", currentIndex + 1);
 
         return "vocaId";
     }
