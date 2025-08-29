@@ -2,8 +2,12 @@
 
 {{#voca}}
     <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
-        <a href="/voca/{{id}}" class="btn btn-primary px-5 py-2 mb-2">단어 학습</a>
-        <a href="/test" class="btn btn-primary px-5 py-2">단어 테스트</a>
+        <div class="d-flex justify-content-center">
+            <a href="/voca/{{id}}" class="btn btn-primary px-5 py-2 mb-2">단어 학습</a>
+        </div>
+        <div class="d-flex justify-content-center">
+            <a href="/test/{{learningDate}}" class="btn btn-primary px-5 py-2">단어 테스트</a>
+        </div>
     </div>
 {{/voca}}
 

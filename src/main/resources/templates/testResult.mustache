@@ -1,0 +1,26 @@
+{{>layouts/header}}
+
+<h2>오답 노트 {{answerCount}} / {{totalIndex}}</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>정답 (Spelling)</th>
+        <th>내가 쓴 답</th>
+        <th>뜻 (Meaning)</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#wrongAnswerList}}
+        <tr>
+            <td>{{spelling}}</td>
+            <td style="color: red;">{{userAnswer}}</td>
+            <td>{{meaning}}</td>
+        </tr>
+    {{/wrongAnswerList}}
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <a href="/select" class="btn btn-primary px-5 py-2">다시 학습하기</a>
+</div>
+
+{{>layouts/footer}}

@@ -1,0 +1,36 @@
+{{>layouts/header}}
+
+<div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+
+    {{#voca}}
+        <div class="progress-indicator mb-4">
+            <h3 style="color: #555;">문제 {{currentIndex}} / {{totalIndex}}</h3>
+        </div>
+
+        <div class="card text-center shadow-sm mb-4" style="width: 28rem;">
+            <div class="card-body p-5">
+                <h1 class="card-title">{{meaning}}</h1>
+            </div>
+        </div>
+
+        <form action="/test/{{learningDate}}/submit" method="post" style="width: 28rem;">
+            <input type="hidden" name="vocaId" value="{{id}}">
+
+            <div class="input-group">
+                <input type="text" name="userAnswer" class="form-control form-control-lg" placeholder="정답 입력 (스펠링)" required autofocus>
+                <button class="btn btn-dark px-4" type="submit">Submit</button>
+            </div>
+        </form>
+
+    {{/voca}}
+
+    {{^voca}}
+        <div class="text-center">
+            <h1>테스트를 불러올 수 없습니다.</h1>
+            <a href="/select" class="btn btn-primary mt-3">학습 선택으로 돌아가기</a>
+        </div>
+    {{/voca}}
+
+</div>
+
+{{>layouts/footer}}

@@ -4,6 +4,7 @@ import com.example.voca.entity.VocaEntity;
 import com.example.voca.repository.VocaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -30,5 +31,22 @@ public class VocaService {
     public VocaEntity findVocaById(int id){
         VocaEntity voca = vocaRepository.findById(id).orElseThrow(() -> new NoSuchElementException("ID: " + id + "에 해당하는 단어가 없습니다."));
         return voca;
+    }
+
+    public boolean checkAnswer(Integer vocaId, String userAnswer) {
+        VocaEntity voca = vocaRepository.findById(vocaId).orElse(null);
+
+        if(voca.getSpelling().equals(userAnswer))
+            return true;
+        else
+            return false;
+    }
+
+    public List<VocaEntity> findVocaByIds(List<Integer> wrongAnswerIds) {
+        List<VocaEntity> vocaEntityList = new ArrayList<>();
+        for(int i = 0; i < wrongAnswerIds.size(); i++){
+            vocaEntityList.add(vocaRepository.findById(wrongAnswerIds.get(i)).orElse(null));
+        }
+        return vocaEntityList;
     }
 }

@@ -41,6 +41,7 @@ public class LearnController {
         VocaEntity todayStartVoca = vocaService.findVocaById(todayStartId);
 
         model.addAttribute("voca", todayStartVoca);
+        model.addAttribute("learningDate", learningDate);
 
         return "select";
     }
@@ -102,10 +103,5 @@ public class LearnController {
         model.addAttribute("voca", todayVoca);
 
         return "vocaList";
-    }
-
-    @GetMapping("/test/{learningDate}")
-    public String testP(@PathVariable Integer learningDate){
-        return "test";
     }
 }
